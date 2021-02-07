@@ -1,5 +1,5 @@
 """
-Example box- and Gaussian-shaped histograms over a waterfall image
+Example box- and Gaussian-shaped histograms over a chapel image
 """
 
 import numpy as np
@@ -11,7 +11,7 @@ import ttrecipes as tr
 import matplotlib.pyplot as plt
 
 ###
-input_dataset = os.path.join(config.data_folder, 'waterfall_4096_4096_uint8.raw')
+input_dataset = os.path.join(config.data_folder, 'chapel_947_1920_uint8.raw')
 B = 64
 eps = 1e-3
 basename, X, tth = util.prepare_dataset(config.data_folder, input_dataset, B, eps)
@@ -40,7 +40,7 @@ pattern_list = []
 
 ### Box
 print('*** Box ***')
-offset = [1024*3, int(1024*0.7)]
+offset = [0, 0]
 S = 512
 shape = [S]*N
 corners = np.array([[offset[0], offset[0]+S], [offset[1], offset[1]+S]])
@@ -65,7 +65,7 @@ print()
 
 ### Gaussian
 print('*** Gaussian ***')
-offset = [1024*1, 1024*2]
+offset = [0, 0]
 S = 768
 shape = [S]*N
 corners = np.array([[offset[0], offset[0]+S], [offset[1], offset[1]+S]])
