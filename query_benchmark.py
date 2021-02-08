@@ -303,9 +303,9 @@ def plot(basename):
 
 
 ###
-input_datasets = [os.path.join(config.data_folder, 'waterfall_4096_4096_uint8.raw'), os.path.join(config.data_folder, 'bonsai_volvis_256_256_256_uint8.raw'), os.path.join(config.data_folder, 'lung_512_512_512_uint8.raw'), os.path.join(config.data_folder, 'flower_1024_1024_1024_uint8.raw')]
-Bs = [64, 128, 128, 128]
-epss = [0.0005000, 0.0001000, 0.0002000, 0.0000150]
+input_datasets = [os.path.join(config.data_folder, 'chapel_947_1920_uint8.raw')]
+Bs = [64]
+epss = [0.0005000]
 ###
 
 for input_dataset, B, eps in zip(input_datasets, Bs, epss):
