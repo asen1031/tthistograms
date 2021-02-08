@@ -235,7 +235,7 @@ def plot(basename):
     pdf = os.path.join(config.data_folder, '{}_single_times.pdf').format(basename)
     handles, labels = plt.gca().get_legend_handles_labels()
     plt.savefig(pdf)
-    os.system('pdfcrop {} {}'.format(pdf, pdf))
+    #os.system('pdfcrop {} {}'.format(pdf, pdf))
     plt.savefig(os.path.join(config.data_folder, '{}_single_times.png').format(basename))
 
     fig_legend = plt.figure(figsize=(8,8), frameon=False)
@@ -267,7 +267,7 @@ def plot(basename):
 
     pdf = os.path.join(config.data_folder, '{}_field_times.pdf').format(basename)
     plt.savefig(pdf)
-    os.system('pdfcrop {} {}'.format(pdf, pdf))
+    #os.system('pdfcrop {} {}'.format(pdf, pdf))
     plt.savefig(os.path.join(config.data_folder, '{}_field_times.png').format(basename))
     # plt.show()
 
@@ -288,7 +288,7 @@ def plot(basename):
     pdf = os.path.join(config.data_folder, '{}_errors.pdf').format(basename)
     handles, labels = plt.gca().get_legend_handles_labels()
     plt.savefig(pdf)
-    os.system('pdfcrop {} {}'.format(pdf, pdf))
+    #os.system('pdfcrop {} {}'.format(pdf, pdf))
     plt.savefig(os.path.join(config.data_folder, '{}_errors.png').format(basename))
 
     fig_legend = plt.figure(figsize=(2,2), frameon=False)
