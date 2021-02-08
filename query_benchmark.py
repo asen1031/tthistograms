@@ -206,7 +206,7 @@ def plot(basename):
     if title == 'Bonsai_volvis':
         title = 'Bonsai'
 
-    df = pd.read_excel(os.path.join(config.data_folder, '{}.xlsx'.format(basename)), sheetname=basename)
+    df = pd.read_excel(os.path.join(config.data_folder, '{}.xlsx'.format(basename)), sheet_name=basename)
 
     figsize = (6, 3)
 
