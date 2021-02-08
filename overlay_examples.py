@@ -26,8 +26,8 @@ def plot_overlay(X, corners_list, pattern_list, color=(0.25, 0.25, 1), alpha=0.5
         Xrgb = np.repeat((X/B*255)[:, :, np.newaxis].astype(np.uint8), 3, axis=2)
         plt.imshow(Xrgb, vmin=0, vmax=255)
         plt.axis('off')
-        mask[[slice(c[0], c[1]) for c in corners]+[slice(0, 3)]] = color
-        mask[[slice(c[0], c[1]) for c in corners]+[3]] = pattern*alpha
+        mask[tuple([slice(c[0], c[1]) for c in corners]+[slice(0, 3)])] = color
+        mask[tuple([slice(c[0], c[1]) for c in corners]+[3])] = pattern*alpha
     plt.imshow(mask, vmin=0, vmax=255)
     # plt.savefig(os.path.join(config.data_folder, 'overlaid.png'))
 
