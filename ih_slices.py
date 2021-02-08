@@ -15,7 +15,7 @@ import scipy.misc
 import matplotlib.pyplot as plt
 
 ###
-input_dataset = os.path.join(config.data_folder, 'waterfall_4096_4096_uint8.raw')
+input_dataset = os.path.join(config.data_folder, 'chapel_947_1920_uint8.raw')
 B = 64
 eps = 1e-3
 basename, X, tth = util.prepare_dataset(config.data_folder, input_dataset, B, eps)

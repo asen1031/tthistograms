@@ -11,10 +11,7 @@ import config
 
 
 input_datasets = [
-    os.path.join(config.data_folder, 'waterfall_64_0.0005000.tth'),
-    os.path.join(config.data_folder, 'bonsai_volvis_128_0.0002000.tth'),
-    os.path.join(config.data_folder, 'hnut_128_0.0000250.tth'),
-    os.path.join(config.data_folder, 'flower_128_0.0000150.tth')
+    os.path.join(config.data_folder, 'chapel_64_0.0010000.tth')
     ]
 
 df = pd.DataFrame(index=['Size (MB)', '$T_D$ (s)', 'B', 'Full IH (GB)', r'\specialcell{Compression \\ target $\eps$}', r'\specialcell{Compressed \\ IH (MB)}', 'TT ranks'], columns=[r'\textbf{Waterfall}', r'\textbf{Bonsai}', r'\textbf{Hazelnut}', r'\textbf{Flower}'])

@@ -24,7 +24,7 @@ for rmax in 2**np.arange(0, 5):
     ax = plt.Axes(fig, [0., 0., 1., 1.])
     ax.set_axis_off()
     fig.add_axes(ax)
-    ax.imshow(t[:, :, S//2], cmap='gray', vmin=0, vmax=1, aspect='normal')
+    ax.imshow(t[:, :, S//2], cmap='gray', vmin=0, vmax=1, aspect='equal')
     plt.axis('off')
     plt.savefig('tt_ball_{:03d}.jpg'.format(rmax))
     plt.clf()
