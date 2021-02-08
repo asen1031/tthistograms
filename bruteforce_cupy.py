@@ -39,7 +39,7 @@ def box_cp(X, B, corners):
     start = time.time()
     slicing = [slice(corner[0], corner[1]) for corner in corners]
     Xg = Xg[slicing]
-    result = bruteforce_cupy.bincount(Xg.flatten(), B=B)
+    result = bincount(Xg.flatten(), B=B)
     elapsed = time.time() - start
     return cp.asnumpy(result).astype(np.int), elapsed
 
