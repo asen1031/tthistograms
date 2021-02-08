@@ -21,7 +21,7 @@ def box(X, B, corners, weights=None):
     """
 
     start = time.time()
-    chunk = X[[slice(corner[0], corner[1]) for corner in corners]]
+    chunk = X[tuple([slice(corner[0], corner[1]) for corner in corners])]
     gt = np.histogram(chunk, bins=B, range=[-0.5, B - 0.5], weights=weights)[0]
     elapsed = time.time() - start
     return gt, elapsed

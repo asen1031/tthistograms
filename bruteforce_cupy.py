@@ -38,7 +38,7 @@ def box_cp(X, B, corners):
         Xg = cp.asarray(X.astype(np.uint8))
     start = time.time()
     slicing = [slice(corner[0], corner[1]) for corner in corners]
-    Xg = Xg[slicing]
+    Xg = Xg[tuple(slicing)]
     result = bincount(Xg.flatten(), B=B)
     elapsed = time.time() - start
     return cp.asnumpy(result).astype(np.int), elapsed
@@ -55,7 +55,7 @@ def pattern_cp(X, B, corners, pat):
     patg = cp.asarray(pat.astype(np.float32).flatten())
     start = time.time()
     slicing = [slice(corner[0], corner[1]) for corner in corners]
-    Xg = Xg[slicing]
+    Xg = Xg[tuple(slicing)]
     result = bincount(Xg.flatten(), B=B, weights=patg)
     elapsed = time.time() - start
     return cp.asnumpy(result).astype(np.int), elapsed
