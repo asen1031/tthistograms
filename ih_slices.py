@@ -33,16 +33,16 @@ for b in bs:
     orig = (X == b)
     tmp = orig
     orig = np.zeros(np.array(orig.shape)+1)
-    orig[[slice(1, None)]*N] = tmp
+    orig[tuple([slice(1, None)]*N)] = tmp
     print(orig.shape)
     for n in range(N):
         orig = np.cumsum(orig, axis=n)
     orig = orig.astype(float)
-    orig = orig[[slice(None, None, factor)]*N]
+    orig = orig[tuple([slice(None, None, factor)]*N)]
     origs.append(orig)
 
     reco = tth.tensor[[slice(None)]*N + [b]].full()
-    reco = reco[[slice(None, None, factor)] * N]
+    reco = reco[tuple([slice(None, None, factor)] * N)]
     recos.append(reco)
 
     diffs.append(np.abs(orig-reco))
